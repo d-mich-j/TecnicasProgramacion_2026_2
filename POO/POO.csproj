@@ -7,4 +7,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Codigo Rectangulo.cs" />
+    <Compile Remove="Program.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Codigo Rectangulo.cs" />
+    <None Include="Program.cs" />
+  </ItemGroup>
+
 </Project>
