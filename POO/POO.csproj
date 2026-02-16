@@ -8,13 +8,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="16-02-26.cs" />
+    <Compile Remove="Calculadora.cs" />
+    <Compile Remove="Calculadora2.cs" />
     <Compile Remove="Codigo Rectangulo.cs" />
+    <Compile Remove="Persona.cs" />
     <Compile Remove="Program.cs" />
+    <Compile Remove="Rectangulo.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="16-02-26.cs" />
+    <None Include="Calculadora.cs" />
+    <None Include="Calculadora2.cs" />
     <None Include="Codigo Rectangulo.cs" />
+    <None Include="Persona.cs" />
     <None Include="Program.cs" />
+    <None Include="Rectangulo.cs" />
   </ItemGroup>
 
 </Project>
