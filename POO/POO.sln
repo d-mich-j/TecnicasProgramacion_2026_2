@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución",
 		16-02-26.cs = 16-02-26.cs
 		Calculadora2.cs = Calculadora2.cs
 		Dispositivo.cs = Dispositivo.cs
+		ListaPersona.cs = ListaPersona.cs
 		Persona.cs = Persona.cs
 	EndProjectSection
 EndProject
