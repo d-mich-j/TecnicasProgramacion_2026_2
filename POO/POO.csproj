@@ -20,6 +20,7 @@
     <Compile Remove="Persona.cs" />
     <Compile Remove="Program.cs" />
     <Compile Remove="Rectangulo.cs" />
+    <Compile Remove="Suministro.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +36,7 @@
     <None Include="Persona.cs" />
     <None Include="Program.cs" />
     <None Include="Rectangulo.cs" />
+    <None Include="Suministro.cs" />
   </ItemGroup>
 
 </Project>

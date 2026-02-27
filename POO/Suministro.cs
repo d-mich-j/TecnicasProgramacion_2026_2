@@ -12,7 +12,7 @@ while (!salir) {
     Console.WriteLine("     3. Ordenar por nombre");
     Console.WriteLine("     4. Invertir orden");
     Console.WriteLine("     5. Vaciar inventario");
-    Console.WriteLine("     3. Agregar suministro");
+    Console.WriteLine("     6. Agregar suministro");
     Console.WriteLine("     7. Eliminar suministro");
     Console.WriteLine("     8. Salir");
 
@@ -50,6 +50,8 @@ while (!salir) {
                 
                 inventario.AgregarSuministros(nombreSum, int.Parse(cantidad), int.Parse (prioridad));
 
+
+
             } else {
                 inventario.AgregarSuministro(nombreSum);
             }
@@ -66,6 +68,8 @@ while (!salir) {
         default:
             Console.WriteLine("No existe esa opcion");
             break;
+
+            
 
     }
 
@@ -173,7 +177,7 @@ public class Suministro
             }
 
             Array.Resize(ref suministros, suministros.Length - 1);
-            Console.WriteLine($"{nombre} Se ");
+            Console.WriteLine($"{nombre} se elimino del inventario");
         }
     }
 
