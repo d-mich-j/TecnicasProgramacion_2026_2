@@ -16,6 +16,7 @@
     <Compile Remove="CuentaBancaria.cs" />
     <Compile Remove="Dispositivo.cs" />
     <Compile Remove="Exepcione .cs" />
+    <Compile Remove="Juego.cs" />
     <Compile Remove="ListaPersona.cs" />
     <Compile Remove="Persona.cs" />
     <Compile Remove="Program.cs" />
@@ -32,6 +33,7 @@
     <None Include="CuentaBancaria.cs" />
     <None Include="Dispositivo.cs" />
     <None Include="Exepcione .cs" />
+    <None Include="Juego.cs" />
     <None Include="ListaPersona.cs" />
     <None Include="Persona.cs" />
     <None Include="Program.cs" />

@@ -1,17 +1,87 @@
 ﻿//Implementaciones del juego 
 
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 try {
     Console.WriteLine("BINVENIDO AL TORNEO DE GUERREROS ");
-    Console.WriteLine("Ingresa el nombre de tu guerrero:");
-    string Nombre = Console.ReadLine()??"";
+    string nombre = ObtenerNombre();
+
+    Guerrero jugador = SeleccionarClase(nombre);
+    Guerrero enemigo = GeneraEnemigo();
+
+    Console.WriteLine($"Te enfrentaras a {enemigo.Nombre}");
+
+    while (enemigo.Vida > 0 && jugador.Vida >0) {
+        MostrarEstado(jugador, enemigo);
+        string opcion = ObtenerOpcion();
+
+        switch (opcion) {
+            case "1":
+                jugador.Atacar(enemigo);
+                break;
+            case "2":
+                Console.WriteLine($"{jugador.Nombre} se defiende y se reduce");
+                enemigo.Atacar(jugador);
+                jugador.Recibirdanio(jugador.Ataque/2);
+                break;
+            case "3":
+                Console.WriteLine("Intentando la fusion");
+                if(new Random().Next(1,100) > 50) {
+                    jugador = jugador + enemigo;
+                    Console.WriteLine($"Tu nuevo nombre es {jugador.Nombre} | {jugador.Vida} | {jugador.Ataque}");
+
+                }else {
+                    Console.WriteLine("La fusion fallo y perdiste vida");
+                    jugador.Recibirdanio(jugador.Vida / 2);
+                }
+                    break;
+            default:
+                throw new ArgumentException("Opcion invalida");
+
+        }
+
+
+        if (enemigo.Vida > 0) {
+            enemigo.Atacar(jugador):; 
+        }
+    }
     
 } catch {
 
 }
 
 //Apartado de funciones 
+static string ObtenerNombre() {
+    while (true) {
+        try {
+            Console.WriteLine("Ingresa nombre del guerrero: ");
+            string nombre = Console.ReadLine() ?? "".Trim();
+            if (string.IsNullOrEmpty(nombre)) {
+                throw new ArgumentException("Elnombre no puede estar vacio ");
+            }return nombre;
+        } 
+        catch (Exception ex ) {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+    }
+}
 
-static Guerrero SeleccionarClase() {
+static string  ObtenerOpcion() {
+    while (true) {
+        try {
+            Console.WriteLine("Ingresa que quieres hacer: ");
+            string opcion = Console.ReadLine() ?? "".Trim();
+            if (opcion != "1" && opcion != "2" && opcion != "3") {
+                throw new ArgumentException("Opcion invalida, debes de ingresar 1,2 o 3");
+            }
+            return opcion;
+        }catch (Exception ex) {
+            Console.WriteLine($"eRROR:{ex.Message}");
+        }
+    }
+} 
+
+static Guerrero SeleccionarClase(string nombre) {
     while (true) {
         try {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -21,12 +91,31 @@ static Guerrero SeleccionarClase() {
             Console.WriteLine("     2. Mago");
             Console.WriteLine("     3. Arquero");
             Console.WriteLine("     4. Guerrero sombra");
-        } catch {
 
+            string opcion = Console.ReadLine() ?? "";
+            return opcion switch
+            {
+                "1" => new Caballero(nombre),
+                "2" => new Mago(nombre),
+                "3" => new Arquero(nombre),
+                "4" => new GuerreroSombra(nombre),
+                _ => throw new ArgumentException("Opcion invalida, intenta nuevamente"),
+            };
+        } catch (Exception ex) {
+            Console.WriteLine($"{ex.Message}");
         }
     }
 }
 
+static Guerrero GeneraEnemigo() {
+    string[] nombres = { "Vikingos", "orcos", "Terminator", "Mikey Mouse", "Sherk", "Zeus" };
+    string nombre = nombres[new Random().Next(nombres.Length)];
+    return new Guerrero (nombre, new Random().Next(150, 200), new Random ().Next(30,50));
+}
+
+static void MostrarEstado (Guerrero jugador, Guerrero enemigo) {
+    Console.ForegroundColor = ConsoleColor.Magenta;
+}
 
 //Definiciones de clases 
 
