@@ -20,8 +20,15 @@ while (!salir) {
 
     switch (opcion) {
         case 1:
-            inventario.MostrarSuministros();
-            break;
+            try {
+                Console.WriteLine("Error: el inventario esta vacio");
+
+                inventario.MostrarSuministros();
+            } catch (FormatException) {
+                Console.WriteLine("Error: el suministro esta vacio ");
+            }
+
+                break;
         case 2:
             Console.WriteLine("Ingresa el suministro a buscar:");
             String nombre = Console.ReadLine()??"";
@@ -36,6 +43,7 @@ while (!salir) {
             break;
         case 5:
             inventario.VaciarInventario();
+
             break;
         case 6:
             Console.WriteLine("Ingresa el nombre del suministro a agregar :");
@@ -43,17 +51,22 @@ while (!salir) {
             
             Console.WriteLine("antidad o vacio");
             String cantidad = Console.ReadLine() ?? "";
-
-            if (cantidad != "") {
-                Console.WriteLine("Prioridad o vacio");
-                string prioridad = Console.ReadLine() ?? "";
-                
-                inventario.AgregarSuministros(nombreSum, int.Parse(cantidad), int.Parse (prioridad));
+            try {
 
 
+                if (cantidad != "") {
+                    Console.WriteLine("Prioridad o vacio");
+                    string prioridad = Console.ReadLine() ?? "";
 
-            } else {
-                inventario.AgregarSuministro(nombreSum);
+                    inventario.AgregarSuministros(nombreSum, int.Parse(cantidad), int.Parse(prioridad));
+
+
+
+                } else {
+                    inventario.AgregarSuministro(nombreSum);
+                }
+            } catch (FormatException) {
+                Console.WriteLine("Error: cantidad y prioridad deben ser numeros enteros ");
             }
 
                 break;

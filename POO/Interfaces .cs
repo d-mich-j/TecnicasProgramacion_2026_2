@@ -4,6 +4,8 @@
 
 IEjemplo algo = new EjemploClase();
 algo.Haceralgo();
+algo.Haceralgomas();
+
 
 
 
@@ -21,3 +23,11 @@ public class EjemploClase : IEjemplo {
     }
 }
 
+public class Tucan : Paloma {
+
+}
+
+//Usando INterfaces 
+public interface IaNIMAL {
+    void HacerSonido();
+}

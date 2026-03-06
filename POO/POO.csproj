@@ -9,13 +9,16 @@
 
   <ItemGroup>
     <Compile Remove="16-02-26.cs" />
+    <Compile Remove="4-mar-2026.cs" />
     <Compile Remove="arreglos.cs" />
     <Compile Remove="Calculadora.cs" />
     <Compile Remove="Calculadora2.cs" />
+    <Compile Remove="Casteos.cs" />
     <Compile Remove="Codigo Rectangulo.cs" />
     <Compile Remove="CuentaBancaria.cs" />
     <Compile Remove="Dispositivo.cs" />
     <Compile Remove="Exepcione .cs" />
+    <Compile Remove="Interfaces .cs" />
     <Compile Remove="Juego.cs" />
     <Compile Remove="ListaPersona.cs" />
     <Compile Remove="Persona.cs" />
@@ -26,13 +29,16 @@
 
   <ItemGroup>
     <None Include="16-02-26.cs" />
+    <None Include="4-mar-2026.cs" />
     <None Include="arreglos.cs" />
     <None Include="Calculadora.cs" />
     <None Include="Calculadora2.cs" />
+    <None Include="Casteos.cs" />
     <None Include="Codigo Rectangulo.cs" />
     <None Include="CuentaBancaria.cs" />
     <None Include="Dispositivo.cs" />
     <None Include="Exepcione .cs" />
+    <None Include="Interfaces .cs" />
     <None Include="Juego.cs" />
     <None Include="ListaPersona.cs" />
     <None Include="Persona.cs" />
