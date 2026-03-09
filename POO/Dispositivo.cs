@@ -1,4 +1,4 @@
-﻿//Programa principal 
+﻿    //Programa principal 
 
 Lampara lampara = new Lampara("Lamparita",100, 40);
 Ventilador ventilador = new Ventilador("Aire", 150, 50);
