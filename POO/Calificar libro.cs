@@ -1,8 +1,54 @@
 ﻿//Programa principal
 
+Libreria libreria = new Libreria();
+
+try 
+{
+    int operaciones = int.Parse(Console.ReadLine() ?? "");
+
+    for (int i = 0; i< operaciones; i++) 
+    {
+        string[] entrada = (Console.ReadLine() ?? "").Split(" ");
+        string comando = entrada[0];
+        switch (comando) {
+            case "LIBRO":
+                libreria.AgregarLibro(entrada[1], entrada[2], entrada[3]);
+
+                break;
+            case "CALIFICAR":
+                
+                if (entrada.Length == 4) { 
+                    libreria.CalificarLibro(entrada [1], int.Parse(entrada[3]));
+                }else 
+                {
+                    //Control
+                    Console.WriteLine(entrada.Length);
+
+                    libreria.CalificarLibro(entrada[1], int.Parse(entrada[3]), string.Join (" ", entrada.Skip(4)));
+                }
+                    break;
+            case "MEJOR":
+                libreria.MostrarMejorLibro(entrada[1]);
+
+                break;
+            case "CRITERIO":
+                libreria.CambiarCriterio(entrada[1]);
+
+                break;
+            default:
+                throw new InvalidOperationException("comando no valido");
+        }
+
+    }
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Error: {ex.Message}");
+}
+
+
 //Clases 
 
-using System.Security.Cryptography;
 
 public class Libro {
     //Atributos
@@ -75,20 +121,22 @@ public class LibroFiccion : Libro
 
     public LibroFiccion(string titulo, string autor, string genero) : base(titulo, autor, genero) 
     {
-        if (tipoFiccion.Contains(genero)) {
+        if (tipoFiccion.Contains(genero)) 
+        {
             throw new ArgumentException("El libro no pertenece a esta categoria");
         }
     }
 }
 
-public class LibroTecnico : Libro {
-    //Variable de clase 
-    List<string> tipoFiccion = new List<string> { "Matematicas", "Historia", "Programacion", "Filosofia", "Medicina" };
+public class LibroTecnico : Libro 
+    {
+ 
 
     //Constructor 
 
     public LibroTecnico(string titulo, string autor, string genero) : base(titulo, autor, genero) {
-        if (tipoFiccion.Contains(genero)) {
+        if (tipoFiccion.Contains(genero)) 
+        {
             throw new ArgumentException("El libro no pertenece a esta categoria");
         }
     }
@@ -183,11 +231,14 @@ public class Libreria {
     }
 
     //Sobrecarga 
-    public void CalificarLibro(string titulo, int estrellas, string comentario) {
+    public void CalificarLibro(string titulo, int estrellas, string comentario) 
+    {
         Libro libroEncontrado = null;
 
-        foreach (Libro libro in libros) {
-            if (libro.Titulo == titulo) {
+        foreach (Libro libro in libros) 
+        {
+            if (libro.Titulo == titulo) 
+            {
                 libroEncontrado = libro;
                 break;
             }
@@ -195,8 +246,44 @@ public class Libreria {
 
         if (libroEncontrado != null) {
             libroEncontrado.Calificar(estrellas, comentario);
-        } else {
+        } 
+        else 
+        {
             throw new KeyNotFoundException("Libro no ncontrado");
+        }
+    }
+
+    public void CambiarCriterio(string criterio) 
+    {
+        if (criterio == "PROMEDIO")
+        {
+            estragiaRecomendacion = new RecomendacionPorPromedio();
+        }
+        else if (criterio == "VOTOS") 
+        {
+            estragiaRecomendacion = new RecomendacionPorVotos();
+        }
+    }
+
+    public void MostrarMejorLibro(string genero) 
+    {
+        List<Libro> librosGenero = new List <Libro>();
+
+        foreach (Libro libro in libros) 
+            {
+            if (libro.Genero == genero) 
+            {
+                librosGenero.Add(libro);
+            }
+        }
+
+        Libro mejorLibro = estragiaRecomendacion.ObtenerMejorLibro(librosGenero);
+        if (mejorLibro != null) 
+        {
+            Console.WriteLine(mejorLibro.Titulo);
+
+        } else {
+            Console.WriteLine("NINGUNO");
         }
     }
 }
