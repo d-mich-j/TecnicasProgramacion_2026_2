@@ -13,11 +13,13 @@
     <Compile Remove="arreglos.cs" />
     <Compile Remove="Calculadora.cs" />
     <Compile Remove="Calculadora2.cs" />
+    <Compile Remove="Calificar libro.cs" />
     <Compile Remove="Casteos.cs" />
     <Compile Remove="Codigo Rectangulo.cs" />
     <Compile Remove="CuentaBancaria.cs" />
     <Compile Remove="Dispositivo.cs" />
     <Compile Remove="Exepcione .cs" />
+    <Compile Remove="gestion de competencias .cs" />
     <Compile Remove="IDispositivos.cs" />
     <Compile Remove="Interfaces .cs" />
     <Compile Remove="Juego.cs" />
@@ -35,11 +37,13 @@
     <None Include="arreglos.cs" />
     <None Include="Calculadora.cs" />
     <None Include="Calculadora2.cs" />
+    <None Include="Calificar libro.cs" />
     <None Include="Casteos.cs" />
     <None Include="Codigo Rectangulo.cs" />
     <None Include="CuentaBancaria.cs" />
     <None Include="Dispositivo.cs" />
     <None Include="Exepcione .cs" />
+    <None Include="gestion de competencias .cs" />
     <None Include="IDispositivos.cs" />
     <None Include="Interfaces .cs" />
     <None Include="Juego.cs" />
