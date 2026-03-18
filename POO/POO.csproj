@@ -25,6 +25,7 @@
     <Compile Remove="Juego.cs" />
     <Compile Remove="ListaPersona.cs" />
     <Compile Remove="Persona.cs" />
+    <Compile Remove="PrimerParcial.cs" />
     <Compile Remove="Program.cs" />
     <Compile Remove="Rectangulo.cs" />
     <Compile Remove="Suministro.cs" />
@@ -49,10 +50,23 @@
     <None Include="Juego.cs" />
     <None Include="ListaPersona.cs" />
     <None Include="Persona.cs" />
+    <None Include="PrimerParcial.cs" />
     <None Include="Program.cs" />
     <None Include="Rectangulo.cs" />
     <None Include="Suministro.cs" />
     <None Include="tareaDispositivos.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BibliotecaDeLibros">
+      <HintPath>..\Bilioteca de libros\bin\Debug\net8.0\BibliotecaDeLibros.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtensioneDeBiblioteca">
+      <HintPath>..\ExtensioneDeBiblioteca\bin\Debug\net8.0\ExtensioneDeBiblioteca.dll</HintPath>
+    </Reference>
+    <Reference Include="ValidacionesBiblioteca">
+      <HintPath>..\ValidacionesBiblioteca\bin\Debug\net8.0\ValidacionesBiblioteca.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
