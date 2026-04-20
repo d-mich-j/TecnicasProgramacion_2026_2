@@ -32,8 +32,7 @@ Rutina rutina = new Rutina(nombreRutina, duracionRutina);
 
 //Agregar ejercicios a rutina
 
-Console.WriteLine("Cuantos ejercicios tendra la rutina:");
-
+Console.WriteLine("Cuantos ejercicios tendra la rutina:")
 
 
 
